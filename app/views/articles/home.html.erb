@@ -1,0 +1,16 @@
+<% if user_signed_in? %>
+
+<h1>Hello..!</h1>
+
+<%= link_to 'My Blog', controller: 'articles' %>
+<%= link_to 'New article', new_article_path %>
+<%= link_to "sign out", destroy_user_session_path, method: :delete %>
+<br>you are signed in
+<% else %>
+
+<h1> welcome to the blog</h1>
+
+<%= link_to "sign in", new_user_session_path, method: :get %>
+<%= link_to "sign up", new_user_registration_path, method: :get %>
+
+<% end %>
